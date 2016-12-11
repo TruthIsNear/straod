@@ -24,26 +24,24 @@ void Show(List *MyList) //Нужен только сам стек
     //с помощью цикла проходим по всему стеку
     while (temp!=NULL) //выходим при встрече с пустым полем
     {
-    cout<<temp->x<<endl;; //Выводим на экран элемент стека
-    temp=temp->Next; //Переходим к следующему элементу
+    	cout<<temp->x<<endl;; //Выводим на экран элемент стека
+    	temp=temp->Next; //Переходим к следующему элементу
     }
 }
  
 /*ФУНКЦИЯ УДАЛЕНИЯ СТЕКА ИЗ ПАМЯТИ*/
 void ClearList(List *MyList)
-    {
+{
     while (MyList->Head!=NULL) //Пока по адресу не пусто
     {
-    List *temp=MyList->Head->Next; //Временная переменная для хранения адреса следующего элемента
-    delete MyList->Head; //Освобождаем адрес обозначающий начало
-    MyList->Head=temp; //Меняем адрес на следующий
-}
+    	List *temp=MyList->Head->Next; //Временная переменная для хранения адреса следующего элемента
+    	delete MyList->Head; //Освобождаем адрес обозначающий начало
+    	MyList->Head=temp; //Меняем адрес на следующий
+	}
 }
  
 int main()
 {
- 
- 
     List *MyList=new List; //Выделяем память для стека
  	string str;
  
@@ -51,14 +49,12 @@ int main()
  
     while (str!="0")
 	{
-		
 		Add(str,MyList); //Заносим данные в стек
 		cout<<"Input the game's name>>";
 		cin>>str;
 	}
 	cout<<"\nThe stack is"<<endl;
     Show(MyList); //Выводим стек на экран
- 
     ClearList(MyList); //Очищаем память.
     delete MyList->Head;
     delete MyList;
